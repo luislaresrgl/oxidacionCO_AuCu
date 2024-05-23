@@ -1,0 +1,49 @@
+# Basic setup:
+ ISPIN = 2
+ LSORBIT = .FALSE.
+ ISTART = 1
+ ICHARG = 1
+ # not using Hubbard U
+
+# Accuracy controls:
+ PREC = Accurate
+ ISYM = 1
+ # Use default energy cutoff for PREC
+
+# Electronic loop controls:
+ ALGO = Fast    # Davidson (IALGO = 38) initial phase then RMM-DIIS (IALGO = 48
+ EDIFF = 0.000001
+ ENCUT = 600
+ NELM = 200
+ NELMIN = 5
+ NELMDL = -10
+ MAXMIX = -100
+ ISMEAR = 0        # 1st order Methfessel-Paxton method
+ SIGMA = 0.05
+ # NBANDS - using default
+
+# Relaxation control:
+ IBRION = 1    # Conjugate gradients
+ NSW = 100
+ ISIF = 2      # Ions
+ EDIFFG = -0.01
+ MAGMOM = 64*2.0 127*2.0 13*2.0 
+ LREAL = Auto
+
+# Properties:
+ LCHARG = .FALSE.
+ LWAVE = .FALSE.
+ LELF = .FALSE.
+ LVTOT = .FALSE.
+ LVHAR = .FALSE.
+ GGA = PS
+ LDAU = .TRUE.
+ IVDW = 12
+
+# HUBBARD
+ LDAUU = 3.00 0.00 0.00
+ LDAUJ =  0.00 0.00 0.00
+ LDAUL =  2   -1   -1
+ LDAUPRINT = 1
+ LMAXMIX = 4
+ LASPH = .TRUE. #non-spherical contributions from the gradient corrections inside the PAW spheres will be included IMPORTANT FOR LDA+U
